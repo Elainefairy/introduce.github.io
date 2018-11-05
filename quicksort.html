@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>快速排序</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<link type="text/css" rel="stylesheet" href="Styles/SyntaxHighlighter.css"></link>
+		<script language="javascript" src="Scripts/shCore.js"></script>
+		<script language="javascript" src="Scripts/shBrushCpp.js"></script>
+		<script language="javascript" src="Scripts/shBrushXml.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=" HTML, H5" >
+<meta name="description"content="算法 编程 C语言 教育 漫画">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+</head>
+
+<body class="header-top">
+<!---->
+<div class="header">
+	 <div class="container">
+		 <div class="header-top">
+			 <div class="logo">
+				 <a href="index.html"><h1 style="color:#F06;font-size:48px";>Make It Easy</h1><span><h2  style="color:#FFF;font-size:28px;">Education</span></h2></a>
+			 </div>
+			 <div class="hdr-address">
+				 <div class="address1">
+					 <h5> 3663,华东师范大学</h5>
+					 <p>上海，中国</p>
+				 </div>
+				 <div class="call">
+					 <h5>869232397@qq.com</h5>
+					 <p>请与我们联系</p>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+			 <div class="search">
+				 <div class="search-box">
+					 <div id="sb-search" class="sb-search">
+						  <form>
+							<input class="sb-search-input" placeholder="请输入关键词..." type="search" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+						 </form>
+					 </div>
+				 </div>
+			 </div>
+			 <div class="clearfix"> </div>
+			 <!-- search-scripts -->
+			<script src="js/classie.js"></script>
+			<script src="js/uisearch.js"></script>
+				<script>
+					new UISearch( document.getElementById( 'sb-search' ) );
+				</script>
+			<!-- //search-scripts -->
+		 </div>
+		<div class="top-menu">
+			 <span class="menu">菜单</span>
+			 <ul>
+			 <li><a href="主页.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>主页</a></li>
+			 <li><a href="关于我们.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>关于</a></li>
+			 <li><a href="目录.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>目录</a></li>
+			 <li><a href="帮助.html"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>帮助</a></li>
+			 <li><a href="联系我们.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>联系</a></li>
+             </ul>
+		 </div>
+		 <!-- script-for-menu -->
+		 <script>					
+			$("span.menu").click(function(){
+				$(".top-menu ul").slideToggle("slow" , function(){
+						});
+					});
+		 </script>
+		 <!-- script-for-menu -->	
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+<!---->
+<div class="about">
+	 <div class="container">
+		 <h2  style="color:#F06;font-family:'楷体';font-size:36px";>算法简介</h2>
+         <br />
+         <br />
+<div class="about-grids">
+			 <div class="col-md-6 about-info">
+				 <h4  style="color:#000;font-family:'楷体';font-size:30px";>快速排序（Quick Sort）</h4>
+                 <br />
+				 <p style="text-indent:2em;color:#000;font-family:'楷体';font-size:18px">排序在我们的学习和生活中都是十分常见的现象，大家有没有思考过如何用一个算法来实现有步骤地实现排序呢？今天我们要介绍一个排序算法，它的名字叫快速排序。快速排序是一种很厉害的排序算法，但是它的基本原理很简单。学会快速排序，我们只需要记住它的三个主要步骤：</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px"> 1. 首先在一组数中随便取一个作为基准数。</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">2. 在这组数中找到基准数要呆的正确位置，也就是把比它大的数都放在它的右边，把比它小的数放在它的右边。</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">3. 然后我们只需要对上个基准数左右两边的混乱数列分别进行上面的操作，并且不断进行下去，最后便可以找到每一个数字的正确位置啦！</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:18px">是不是很简单？那么我们下面就用一个例子来演示一下。</p>
+<h5 style="color:#F06;font-family:'楷体';font-size:24px";>接下来一起观看我们的动画演示吧！</h5>
+<!--<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图一</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">我们来给动物园的小动物排个队，他们身上的数字分别为：5，6，1，8，3，4，7。首先我们选取最左边的5作为基准数（这也是最通常的做法），现在我们要假设有两个小箭头小left和小right指向最左面的数字和最右面的数字。</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图二</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">首先小right从右向左移动，直到找到一个比基准数小的数字4，并停在这个位置。然后小left开始从左向右移动，直到找到一个比基准数大的数字6，并停下来。这时，我们把小right指向的数字与小left指向的数字进行交换，得到：5，4，1，8，3，6，7。</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图三</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">然后小right继续从右向左移动，它停在了数字3；小left向右移动，它停在了数字8。我们将这两个数字进行交换，得到：5，4，1，3，8，6，7.
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图四</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">小right向左移动，移动到了小left的位置，小right与小left相遇了！然后将我们的基准数5移动到小left和小right的位置，这一趟排序就结束啦。此时数列为：3，4，1，5，8，6，7。我们成功地将5放在了正确的位置上。可是数字5左右两边的数字仍是乱糟糟的，要怎么办呢？</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图五</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">聪明的你一定想到了，我们再对5左右两边的数列分别重复上面的操作，最后一定能成功找出每个数字该在的位置，这个方法也叫做递归。我们对5左边的数列进行快速排序，也就是序列3，4，1。还是一样的思路，选择3为基准数，小left指向最左边的数，小right指向最右边的数。小right向左找到的第一个比基准数小的数是1，所以它呆在原地。小left向右移动，停在数字4的位置。将两个数字交换得到3，1，4。</p>
+<!--<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图六</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">小right向左移动，在移动的过程中，与小left在数字1相遇了。将基准数与1交换，得到1，3，4。这样，我们将3放在了正确的位置。因为它的左右都只有一个数字，所以我们已经成功地排好了这个序列。</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图七</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">现在我们要排5右面的序列8，6，7啦！选择8为基准数，小left指向最左边的数，小right指向最右边的数。将小right向左移动找比8小的数字，在7的位置停下；然后将小left向右移动找比8大的数字，可是一直没能找到，并且在数字7那里与小right相遇了，所以我们将数字7与基准数8交换，得到7，6，8</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图八</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">我们将数字8排在了正确的位置现在只剩下数列7，6没有排好序。选择7为基准数，小left指向最左边的数7，小right指向最右边的数6。将小right向左移动寻找比7小的数，在6处停下；将小left向右移动寻找比7大的数，它在寻找的过程中在数字6那里遇见了小right。于是将6与基准数7交换，得到了6，7</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">图九</p>
+<p style="text-indent:2em;color:#000;font-family:'楷体';font-size:16px">现在我们已经将每个数字的正确位置都成功找出来啦！我们只需要将前面一个个排好序的小序列拼接起来，就得到了完整的排好序的序列：1，3，4，5，6，7，8。是不是很简单呢！</p>-->
+                 
+			 </div>
+			 <div class="col-md-6 abt-code">
+             <br />
+            <br />
+			
+<pre><code class="language-cpp">
+void quiksort(int a[],int left,int right)
+{
+    int i,j,t,h;
+    if(left > right)
+        return;
+    t = a[left];//t存的是基准数字
+    i = left;
+    j = right;
+    while(i != j)
+    {
+        while(a[j] > t && i < j) //从右往左找比基准数小的数
+            j--;
+        while(a[i] < t && i < j) //从左往右找比基准数大的数
+            i++;
+        if(i < j)//在左右指针没有相遇的时候，交换找到的两个数字
+        {
+            h = a[i];
+            a[i] = a[j];
+            a[j] = t;
+        }
+    }
+    a[left] = a[i];//最后将基准数归位
+    a[i] = t;
+    quicksort(left,i-1);//递归排序左边的数
+    quicksort(i+1,right);//递归排序右边的数
+    return;
+}</code></pre>
+<br />
+
+
+</div>
+			<script language="javascript">
+		<!--
+			dp.SyntaxHighlighter.HighlightAll('code', true,false);
+			document.body.removeChild(document.getElementById("code"));
+	  -->
+	</script>
+
+			 </div>
+			 <div class="clearfix"></div>			 
+		 </div>
+</div>
+<br />
+<br />
+
+<div class="flash">
+<div align="center">
+<h2   style="color:#F06;font-family:'楷体';font-size:36px";>动画</h2>
+<br />
+<br />
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>quicksort</title>
+<!-- write your code here -->
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="quicksort.js"></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("C7CD2236BC53AF43B6EFFA92B65E0F8A");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.quicksort();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;            
+			stage.tickOnUpdate = false;            
+			stage.update();            
+			stage.tickOnUpdate = true;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:500px; height:375px">
+		<canvas id="canvas" width="500" height="375" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:500px; height:375px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+</div>
+</div>
+<br />
+<br />
+
+
+         
+   
+     
+<div class="visualability">
+<div align="center">
+<a href="冒泡.html" target="_blank" ><h2 style="color:#F06;font-family:'楷体';font-size:36px";>可视化</h2> </a>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+  
+</div>
+</div>
+<br />
+<br /> 
+<!---->
+
+<div class="copywrite">
+	 <div class="container">
+			 <p>Copyright &copy; 2018.Make It Easy! - partly reference MIE Team</p>
+	 </div>
+</div>
+
+<!---->
+</body>
+</html>

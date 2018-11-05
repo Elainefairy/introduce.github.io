@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Make It Easy,算法</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=" HTML, H5" >
+<meta name="description"content="算法 编程 C语言 教育 漫画">
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<!-- <base href=""target="_blank"> -->
+</head>
+<body>
+<!---->
+<style="background-color:black;">
+
+<div class="header">
+	 <div class="container">
+		 <div class="header-top">
+			 <div class="logo">
+				 <a href="主页.html"><h1 style="color:#F06;font-size:48px";>Make It Easy</h1><span><h2  style="color:#FFF;font-size:28px;">Education</span></h2></a>
+			 </div>
+			 <div class="hdr-address">
+				 <div class="address1">
+					 <h5 font-family:'楷体';>3663,华东师范大学</h5>
+					 <p font-family:'楷体';>上海，中国</p>
+				 </div>
+				 <div class="call">
+					 <h5>869232397@qq.com</h5>
+					 <p>请与我们联系</p>
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>
+			 <div class="search">
+				 <div class="search-box">
+					 <div id="sb-search" class="sb-search">
+						  <form>
+							<input class="sb-search-input" placeholder="请输入关键词..." type="search" name="search" id="search">
+							<input class="sb-search-submit" type="submit" value="">
+							<span class="sb-icon-search"> </span>
+						 </form>
+					 </div>
+				 </div>
+			 </div>
+			 <div class="clearfix"> </div>
+			 <!-- search-scripts -->
+			<script src="js/classie.js"></script>
+			<script src="js/uisearch.js"></script>
+				<script>
+					new UISearch( document.getElementById( 'sb-search' ) );
+				</script>
+			<!-- //search-scripts -->
+		 </div>
+		 <div class="top-menu">
+			 <span class="menu">菜单</span>
+			 <ul>
+			 <li class="active"><a href="主页.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>主页</a></li>
+			 <li><a href="关于我们.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>关于</a></li>
+			 <li><a href="目录.html"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>目录</a></li>
+			 <li><a href="帮助.html"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>帮助</a></li>
+			 <li><a href="联系我们.html"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>联系</a></li>
+             </ul>
+		 </div>
+		 <!-- script-for-menu -->
+		 <script>					
+					$("span.menu").click(function(){
+						$(".top-menu ul").slideToggle("slow" , function(){
+						});
+					});
+		 </script>
+		 <!-- script-for-menu -->	
+		 <div class="clearfix"></div>
+	 </div>
+</div>
+<!---->
+<div class="banner">
+	 <div class="container">			
+			<script src="js/responsiveslides.min.js"></script>
+			  <script>
+					$(function () {
+					  $("#slider").responsiveSlides({
+						auto: true,
+						nav: false,
+						speed: 500,
+						namespace: "callbacks",
+						pager: true,
+					  });
+					});
+			 </script>
+			 <div class="slider">
+				 <div class="callbacks_container">
+				     <ul class="rslides" id="slider">
+						  <li>	          
+							 <h2 style="color:#FFF;font-family:'楷体';font-size:48px";>欢迎来到算法的世界！</h2>
+							 <h3>Welcome to the algorithm world, guys!</h3>
+						 </li>
+                         <li>	          
+							  <h2 style="color:#FFF;font-family:'楷体';font-size:48px";>今天也是爱算法的一天哦！</h2>
+							 <h3>Enjoy your Happy Day!</h3>
+						 </li>
+						 <li>	          
+							 <h2 style="color:#FFF;font-family:'楷体';font-size:48px";>今日推荐——冒泡排序</h2>
+							 <h3>快来看看朱一龙是怎样排序的吧！</h3>
+						 </li>
+						 <li>	          
+							 <h2 style="color:#FFF;font-family:'楷体';font-size:48px";>征集！</h2>		
+							 <h3>我们需要有想法的你！</h3>
+						 </li>
+					  </ul>
+                      <div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+				  </button>
+				</div>
+				 </div>
+			 </div>
+			  <!----->		  
+
+	 </div>
+</div>
+<!---->
+
+<div class="welcome">
+	 <div class="container">
+		 <div class="welcome-top">
+			 <h3>Welcome to Our World</h3>
+			 <h4>Our Web Has Over 100 algorithms</h4>
+			 <p style="font-family:'楷体';font-size:22px">网站介绍</p>
+		 </div>
+		 <div class="charitys">
+			  <div class="col-md-4 chrt_grid" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				   <div class="chrty">
+						<figure class="icon">
+							 <span class="glyphicon-icon glyphicon-heart" aria-hidden="true"></span>
+						</figure>
+						<h3><a href="冒泡排序.html"><h3 style="font-family:'楷体';font-size:28px">冒泡排序</h3></a>
+						<p style="font-family:'楷体';font-size:22px">冒泡排序简介.</p>
+				  </div>
+			  </div>
+			  <div class="col-md-4 chrt_grid" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				   <div class="chrty">
+						<figure class="icon">
+							<span class="glyphicon-icon glyphicon-asterisk" aria-hidden="true"></span>
+						</figure>						
+						<h3><a href="quicksort.html"><h3 style="font-family:'楷体';font-size:28px">快速排序</h3></a>
+						<p style="font-family:'楷体';font-size:22px">快速排序简介.</p>
+				  </div>
+			  </div>
+			  <div class="col-md-4 chrt_grid" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+				   <div class="chrty">
+						 <figure class="icon">
+							<span class="glyphicon-icon glyphicon-flag" aria-hidden="true"></span>
+						</figure>						
+						<a href="归并排序.html"><h3 style="font-family:'楷体';font-size:28px">归并排序</h3></a>
+						<p style="font-family:'楷体';font-size:22px">归并排序简介.</p>
+				  </div>
+			  </div>
+			  <div class="clearfix"></div>
+		 </div>		 
+	 </div>
+</div>
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#000000 SIZE=10>
+
+<!---->
+<div class="mission">
+	 <div class="container">
+		 <h3 style="font-family:'楷体'">我们的目标</h3>
+		 <div class="mission-sec">
+         
+			 <div class="blog-grids">
+				 <div class="col-md-6 blog1 text_grid">
+					 <h4 style="font-family:'楷体';>致力于非专业人员的编程教育</h4>
+					 <p style="font-family:'楷体';>介绍段.</p>
+				 </div>
+				 <div class="col-md-6 blog-pic">
+					  <img src="images/06.jpg" class="img-responsive" alt="" >    
+				 </div>
+				 <div class="clearfix"></div>
+			 </div>	
+             
+			 <div class="blog-grids">
+				 <div class="col-md-6 blog-pic">
+					  <img src="images/05.jpg" class="img-responsive" alt="" >
+				 </div>
+				 <div class="col-md-6 blog1">
+					 <h4 style="font-family:'楷体';>致力于是偏远山区青少年的算法教育</h4>
+					 <p style="font-family:'楷体';>介绍段.</p>
+				 </div>			 
+				 <div class="clearfix"></div>
+			 </div>
+             
+		 </div>
+	 </div>
+</div>
+<!---->
+<div class="bottom-grids">
+   <div class="container">
+      <div align="center">
+             <div class="links">
+				 <h3 style="font-family:'楷体'">相关网站推荐</h3>
+				 <ul>
+					 <li><a href="http://sorting.at/"><span class="glyphicon2 glyphicon-menu-right" aria-hidden="true" target="_blank"></span><span style="font-size:22px">Sorting(<span style="font-family:'楷体';font-size:22px">排序</span>)</span></a></li>
+					 <li><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html" target="_blank"><span class="glyphicon2 glyphicon-menu-right" aria-hidden="true"></span><span style="font-size:22px">Data Structure Visualizations(<span style="font-family:'楷体';font-size:22px">数据结构可视化</span>)</span></a></li>
+				 </ul>
+			 </div>
+	  </div>
+    </div>
+</div>
+<HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%" color=#000000 SIZE=10>
+<!---->
+<div class="join">
+	 <div class="container">
+		 <div class="col-md-9 join-info">
+		      <h3 style="font-family:'楷体';>我们诚挚地希望您的加入</h3>
+			  <p style="font-family:'楷体';>为青少儿编程贡献一份力量.</p>
+		 </div>
+		 <div class="col-md-3 join-link">
+				<a href="联系我们.html">Join Us</a>
+		 </div>
+		  <div class="clearfix"></div>
+	 </div>
+</div>
+<!---->
+<div class="copywrite">
+	 <div class="container">
+			 <p>Copyright &copy; 2018.Make It Easy! - partly reference MIE Team</p>
+	 </div>
+</div>
+<!---->
+</body>
+</html>
